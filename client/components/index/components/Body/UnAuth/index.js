@@ -24,6 +24,7 @@ export default function UnAuthComponent({ RequestLogin, meta: { alert }, setMeta
                 email,
                 image
             }
+            
             RequestLogin(data)
         }
     }
@@ -51,7 +52,7 @@ export default function UnAuthComponent({ RequestLogin, meta: { alert }, setMeta
 
                 </GoogleButton>
             }
-            clientId="52547737398-17en55m0r6r5jlhfsekhb2f117rnn9a3.apps.googleusercontent.com"
+            clientId="52547737398-6dt0kusrgnajcn2amuoq6s99ivq0lj63.apps.googleusercontent.com"
             />
             {
                 alert?.message && (

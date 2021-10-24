@@ -5,7 +5,7 @@ import {
 import IconComponent from './components/Icon/index'
 import BodyComponent from './components/Body/index'
 import api from '../../services/client/api/index'
-import { setCookie } from 'nookies'
+import { persistCookie } from '../../services/src/persist/index'
 
 export default function IndexComponent({ userAuth }) {
 
@@ -36,11 +36,8 @@ export default function IndexComponent({ userAuth }) {
                 auth: true,
                 data: dataForm
             })
-            setCookie(null, 'talkgram_token', data.token, {
-                maxAge: 86400 * 30,
-                path: '/',
-                secure: true
-            })
+            const TOKEN = data.token
+            persistCookie(null, "talkgram_token", TOKEN)
             setTimeout(() => setMeta(prev => ({...prev, loading: false})), 300)
         }
         catch{
