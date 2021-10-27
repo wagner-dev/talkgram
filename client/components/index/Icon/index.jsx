@@ -5,7 +5,7 @@ import {
     Title,
     SubTitle
 } from './styled'
-import IconImage from '../../../../assets/index/icon/index.svg'
+import IconImage from '../../../assets/index/icon/index.svg'
 
 export default function IconComponent(){
     return (

@@ -15,7 +15,7 @@ module.exports = {
     verifyJwt(token){
 
         return jwt.verify(token, SECRET,
-                         (err, result) => err ? console.log(err) : result)
+                         (err, result) => err ? false : result)
     }
 
 

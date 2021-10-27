@@ -4,12 +4,16 @@ import {
     Logo,
     BodyData,
 } from './styled'
-import LogoImage from '../../../../public/assets/logo/index.png'
+import LogoImage from '../../../public/assets/logo/index.png'
 import Auth from './Auth/index'
 import UnAuth from './UnAuth/index'
-import Loading from '../../../../global/components/Loading/index'
+import Loading from '../../../global/components/Loading/index'
+import { useAuth } from '../../../services/client/auth/index'
 
-export default function BodyComponent({ RequestLogin, user, meta, setMeta }){
+export default function BodyComponent({ RequestLogin, meta, setMeta }){
+    
+    const { user } = useAuth()
+
     return (
         <Body>
             <Logo>

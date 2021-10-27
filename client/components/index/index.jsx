@@ -2,12 +2,15 @@ import { useState } from 'react'
 import {
     Body
 } from './styled'
-import IconComponent from './components/Icon/index'
-import BodyComponent from './components/Body/index'
+import IconComponent from './Icon/index'
+import BodyComponent from './Body/index'
 import api from '../../services/client/api/index'
 import { persistCookie } from '../../services/src/persist/index'
+import { useAuth } from '../../services/client/auth/index'
 
-export default function IndexComponent({ userAuth }) {
+export default function IndexComponent() {
+    
+    const { setUser } = useAuth()
 
     const [meta, setMeta] = useState({
         loading: false,
@@ -16,8 +19,6 @@ export default function IndexComponent({ userAuth }) {
             message: ''
         }
     })
-    
-    const [user, setUser] = useState( userAuth )
     
     const RequestLogin = async (dataForm) => {
         // loading true
@@ -55,7 +56,6 @@ export default function IndexComponent({ userAuth }) {
         <Body>
             <IconComponent />
             <BodyComponent 
-            user={user}
             RequestLogin={RequestLogin}
             meta={meta}
             setMeta={setMeta} />

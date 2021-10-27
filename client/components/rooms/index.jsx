@@ -1,10 +1,18 @@
-import { useEffect } from 'react'
-import { getCookie } from '../../services/src/persist/index'
+import { useState, useEffect } from 'react'
+import {
+    Body,
+    GlobalStyle
+} from './styled'
+import ActiveUsers from './ActiveUsers/index'
+import Chat from './Chat/index'
 import io from 'socket.io-client'
+import { getCookie } from '../../services/src/persist/index'
 
-const socket = io.connect( process.env.NEXT_PUBLIC_SOCKET )
+const socket = io.connect( process.env.NEXT_PUBLIC_HOST_API )
 
 export default function Rooms({ id }){
+
+    const [activeUsers, setActiveUsers] = useState([])
 
     const EnterInRoom = () => {
         const token = getCookie(null)
@@ -14,18 +22,27 @@ export default function Rooms({ id }){
         }
         socket.emit('enter', options)
     }
-    const VerifyAuth = () => {
-        socket.on('unAuth', ({ status }) => {
-            console.log(status)
+    const VerifyActiveUsers = () => {
+        socket.on('new_user', (data) => {
+            setActiveUsers(prev => [...prev, data])
         })
     }
 
     useEffect(() => {
         EnterInRoom()
-        VerifyAuth()
+        VerifyActiveUsers()
 
         
     }, [])
     
-    return 'sala :'+id
+    return (
+        <>
+            <GlobalStyle />
+            <Body>
+                <ActiveUsers 
+                activeUsers={activeUsers} />
+                <Chat />
+            </Body>
+        </>
+    )
 }
