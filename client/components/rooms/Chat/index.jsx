@@ -1,15 +1,24 @@
 import {
     Body
 } from './styled'
-import { useAuth } from '../../../services/client/auth/index'
+import BarSendMessage from './BarSendMessage/index'
+import RoomName from './RoomName/index'
+import Messages from './Messages/index'
 
-export default function ActiveUsers() {
-    
-    const { user } = useAuth()
+export default function Chat({ messages, myMessage, setMyMessage, SendMessage }) {
 
     return(
         <Body>
-            { user.auth ? 'authenticate' : 'unauthenticate'}
+            <RoomName />
+            
+            <Messages 
+                messages={messages} />
+
+            <BarSendMessage
+                myMessage={myMessage}
+                setMyMessage={setMyMessage}
+                SendMessage={SendMessage}
+            />
         </Body>
     )
 }

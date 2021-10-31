@@ -12,4 +12,8 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Roboto', Arial, Helvetica, sans-serif;
     }
+
+    a, span, textarea, p {
+        font-size: .9rem;
+    }
 `
