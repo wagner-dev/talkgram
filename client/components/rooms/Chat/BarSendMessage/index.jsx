@@ -14,18 +14,40 @@ export default function BarSendMessage({ myMessage, setMyMessage, SendMessage}) 
         if(valid)
             SendMessage(myMessage)
     }
+    
+
+    const VerifyLetter = ({ target: { value }, 
+                                 nativeEvent: { inputType }}) => {
+
+        const letterIsValid = value[0] != false && inputType != 'insertLineBreak'
+        if(letterIsValid)
+            setMyMessage( value ) 
+    }
+
+
+    const SendMessageWithEnter = ({ keyCode }) => {
+        const keyIsEnter = keyCode === 13
+
+        if(keyIsEnter)
+            VerifyMessage()
+    }       
 
     return(
         <Body>
             <InputMessage>
                 <textarea 
+                    onChange={VerifyLetter}
+                    onKeyUp={SendMessageWithEnter}
                     value={myMessage}
-                    onChange={({ target }) => setMyMessage( target.value )}
+
+                    spellCheck={true}
                     placeholder="Mensagem..."
                     maxLength="1500" />
             </InputMessage>
             
-            <InputSubmit onClick={VerifyMessage}>
+            <InputSubmit 
+                onClick={VerifyMessage}>
+
                 <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M128 576L810.666667 512 128 448V160.981333a21.333333 21.333333 0 0 1 30.08-19.456l780.032 351.018667a21.333333 21.333333 0 0 1 0 38.912L158.08 882.474667A21.333333 21.333333 0 0 1 128 863.018667V576z" fill="#ffffff" /></svg>
             </InputSubmit>
         </Body>

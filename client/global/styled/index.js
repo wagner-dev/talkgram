@@ -14,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a, span, textarea, p {
-        font-size: .9rem;
+        font-size: .975rem;
+
+        @media only screen and (max-width: 620px){
+            font-size: .875rem;
+        }
     }
 `

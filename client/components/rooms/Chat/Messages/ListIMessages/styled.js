@@ -29,6 +29,9 @@ export const ItemMessageImage = styled.div`
 export const ItemMessageContent = styled.div`
     width: 100%;
     padding: 1rem 1rem;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     background: ${({ type_message }) => 
                    type_message ? 'var(--color-primary)': '#f5f7fc'};
 

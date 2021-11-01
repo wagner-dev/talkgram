@@ -35,9 +35,11 @@ export default function MyMessages({ item, date }) {
             </ItemContent>
             <ItemMessageImage type_message="i">
                 <Image 
-                width={50}
-                height={50}
-                src={ item.data.image}
+                    width={50}
+                    height={50}
+                    src={ item.data.image}
+                    placeholder="blur"
+                    blurDataURL={ item.data.image }
                 /> 
             </ItemMessageImage>
 

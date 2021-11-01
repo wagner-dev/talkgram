@@ -5,7 +5,7 @@ import {
     Title,
     SubTitle
 } from './styled'
-import IconImage from '../../../assets/index/icon/index.svg'
+import IconImage from '../../../assets/CreateRoom/Icon/index.svg'
 
 export default function IconComponent(){
     return (
@@ -20,7 +20,7 @@ export default function IconComponent(){
                 alt="Imagem" />
             </Icon>
             <Title>
-                <h2>Entre em salas e converse com seus amigos</h2>
+                <h2>Crie salas e converse com seus amigos</h2>
             </Title>
             <SubTitle>
                 <h3>Em tempo real</h3>

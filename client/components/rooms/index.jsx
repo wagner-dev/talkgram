@@ -4,6 +4,7 @@ import {
     GlobalStyle
 } from './styled'
 import Chat from './Chat/index'
+import Content from './Content/index'
 import io from 'socket.io-client'
 import { getCookie } from '../../services/src/persist/index'
 
@@ -19,18 +20,31 @@ export default function Rooms({ id }){
         const token = getCookie(null)
         
         const options = {
-            sala: id,
+            room: id,
             token
         }
         socket.emit('enter', options)
     }
+    
+    const VerifyMessages = () => {
+        socket.on('new_message', (data) => {
+            setMessages(prev => [...prev, data])
+        })
+    }
+    useEffect(() => {
+            EnterInRoom()
+            VerifyMessages()
+    }, [])
+
+
+    
     
     const SendMessage = (message) => {
 
         const token = getCookie(null)
         
         const options = {
-            sala: id,
+            room: id,
             message,
             token,
         }
@@ -39,26 +53,17 @@ export default function Rooms({ id }){
         // reset message
         setMyMessage('')
     }
-    const VerifyMessages = () => {
-        socket.on('new_message', (data) => {
-            setMessages(prev => [...prev, data])
-        })
-    }
-
-    useEffect(() => {
-            EnterInRoom()
-            VerifyMessages()
-    }, [])
     
     return (
         <>
             <GlobalStyle />
             <Body>
+                <Content />
                 <Chat 
-                messages={messages}
-                myMessage={myMessage}
-                setMyMessage={setMyMessage}
-                SendMessage={SendMessage}
+                    messages={messages}
+                    myMessage={myMessage}
+                    setMyMessage={setMyMessage}
+                    SendMessage={SendMessage}
                 />
             </Body>
         </>

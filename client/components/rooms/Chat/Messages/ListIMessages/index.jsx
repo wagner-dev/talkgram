@@ -7,6 +7,7 @@ import pt from 'date-fns/locale/pt-BR'
 import MyMessages from './MyMessages/index'
 import MessagesFromOthers from './MessagesFromOthers/index'
 import Alert from './Alert/index'
+import Empty from './Empty'
 
 function ListMessages({ messages }) { 
 
@@ -41,6 +42,11 @@ function ListMessages({ messages }) {
                         </Fragment >
                     )
                 })
+            }
+            {
+                !messages.find(item => item.type == 'message')
+                ? <Empty />
+                : null
             }
         </Body>
     )

@@ -18,6 +18,8 @@ export default function MessagesFromOthers({ item, date }) {
                 width={50}
                 height={50}
                 src={ item.data.image}
+                placeholder="blur"
+                blurDataURL={ item.data.image }
                 /> 
             </ItemMessageImage>
             <ItemContent>
