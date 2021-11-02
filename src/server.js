@@ -1,4 +1,3 @@
-require('dotenv').config()
 
 const express = require('express')
 const app = express()
@@ -30,4 +29,5 @@ const io = new Server(server, {
 })
 Socket( io )
 
-server.listen(3333)
+const PORT = process.env.PORT || 3000
+server.listen(PORT)
