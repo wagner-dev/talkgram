@@ -1,12 +1,20 @@
 import styled from 'styled-components'
 
 export const Body = styled.footer`
-    width: 100%;
+    width: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 0rem 0rem;
     height: 12vh;
+    position: fixed;
+    bottom: 0;
+
+    @media only screen and (max-width: 920px){
+        width: 80%;
+    }
+    
+    @media only screen and (max-width: 820px){ width: 100%; }
 `
 
 export const InputMessage = styled.div`
