@@ -52,7 +52,7 @@ export default function UnAuthComponent({ RequestLogin, meta: { alert }, setMeta
 
                 </GoogleButton>
             }
-            clientId="52547737398-6dt0kusrgnajcn2amuoq6s99ivq0lj63.apps.googleusercontent.com"
+            clientId="154300190598-tm17bm2tmigdu3grudqsb906ms0nhbb3.apps.googleusercontent.com"
             />
             {
                 alert?.message && (
