@@ -29,7 +29,7 @@ export default function AuthComponent({ meta: { alert } }){
         <>
             <TextLogo>
                 <h2>
-                    Entre em salas e converse com seus amigos
+                    Converse por meio de mensagens com seus colegas em tempo real
                 </h2>
             </TextLogo>
             <InputSubmit space={true}>

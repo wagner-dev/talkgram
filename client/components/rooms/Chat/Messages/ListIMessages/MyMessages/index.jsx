@@ -40,6 +40,7 @@ export default function MyMessages({ item, date }) {
                     src={ item.data.image}
                     placeholder="blur"
                     blurDataURL={ item.data.image }
+                    alt="foto de perfil"
                 /> 
             </ItemMessageImage>
 

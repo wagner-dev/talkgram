@@ -20,6 +20,7 @@ export default function ContentComponent() {
                         
                         placeholder="blur"
                         blurDataURL={SvgIcon.src}
+                        alt="Icon"
                      />
                 </Svg>
                 <Text>

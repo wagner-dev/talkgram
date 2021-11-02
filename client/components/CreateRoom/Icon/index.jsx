@@ -17,14 +17,14 @@ export default function IconComponent(){
                 placeholder="blur"
                 blurDataURL={IconImage}
                 src={IconImage.src}
-                alt="Imagem" />
+                alt="Icon" />
             </Icon>
             <Title>
-                <h2>Crie salas e converse com seus amigos</h2>
+                <h2>Crie salas sobre o tema que você quiser.</h2>
             </Title>
-            <SubTitle>
+            {/* <SubTitle>
                 <h3>Em tempo real</h3>
-            </SubTitle>
+            </SubTitle> */}
         </Body>
     )
 }

@@ -18,6 +18,7 @@ export default function EmptyMessages() {
                     src={EmptyIcon}
                     placeholder='blur'
                     blurDataURL={EmptyIcon}
+                    alt="Icon - nenhuma mensagem"
                     />
             </Svg>
             <Content>

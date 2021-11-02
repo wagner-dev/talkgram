@@ -33,7 +33,7 @@ export default function UnAuthComponent({ RequestLogin, meta: { alert }, setMeta
         <>
             <Title>
                 <h2>
-                    logue e comece a conversar com seus amigos em tempo real.
+                    logue e comece a conversar com seus colegas em tempo real.
                 </h2>
             </Title>
             <GoogleLogin

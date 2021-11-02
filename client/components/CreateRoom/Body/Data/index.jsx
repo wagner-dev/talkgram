@@ -27,7 +27,7 @@ export default function DataComponent(){
         <>
             <TextLogo>
                 <h2>
-                    Crie salas e converse com seus amigos em tempo real
+                    Crie salas sobre o tema que você quiser.
                 </h2>
             </TextLogo>
             <InputSubmit space={true}>

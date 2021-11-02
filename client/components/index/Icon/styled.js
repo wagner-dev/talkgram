@@ -23,6 +23,7 @@ export const Icon = styled.div`
 `
 export const Title = styled.div`
     margin: 2rem 0rem 0rem 0rem;
+    padding: 0rem .8rem;
     h2{
         color: #fff;
         font-size: 1.6rem;

@@ -20,6 +20,7 @@ export default function MessagesFromOthers({ item, date }) {
                 src={ item.data.image}
                 placeholder="blur"
                 blurDataURL={ item.data.image }
+                alt="Foto de perfil"
                 /> 
             </ItemMessageImage>
             <ItemContent>
