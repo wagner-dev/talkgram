@@ -10,14 +10,14 @@ import GoogleLogin from 'react-google-login'
 export default function UnAuthComponent({ RequestLogin, meta: { alert }, setMeta }){
 
     const ChangeLoginGoogle = (result) => {
-        if(result?.error){
+        if(result.error){
             setMeta(prev => ({...prev, alert: {
                 type: 'err',
                 message: 'Ocorreu um erro :('
             }}))
         }
         else{
-            const { mt: { Re: name, Xt: email, nK: image } } = result
+            const { profileObj: { name, email, imageUrl: image } } = result
 
             const data = {
                 name,
